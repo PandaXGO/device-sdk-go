@@ -132,9 +132,11 @@ func (mc *MqttClient) createClientOptions() *paho.ClientOptions {
 	opts := paho.NewClientOptions()
 	opts.AddBroker(mc.host)
 
-	if mc.username != "" && mc.password != "" {
-		opts.SetPassword(mc.password)
+	if mc.username != "" {
 		opts.SetUsername(mc.username)
+	}
+	if mc.password != "" {
+		opts.SetPassword(mc.password)
 	}
 
 	if mc.opts.useSSL {
