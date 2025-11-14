@@ -76,11 +76,11 @@ func (mc *MqttClient) PublishAttribute(ctx context.Context, payload interface{})
 }
 
 func (mc *MqttClient) PublishGatewayTelemetry(ctx context.Context, payload interface{}) error {
-	return mc.publish(spec.TelemetryTopic, payload)
+	return mc.publish(spec.GatewayTelemetryTopic, payload)
 }
 
 func (mc *MqttClient) PublishGatewayAttribute(ctx context.Context, payload interface{}) error {
-	return mc.publish(spec.AttributeTopic, payload)
+	return mc.publish(spec.GatewayAttributeTopic, payload)
 }
 
 func (mc *MqttClient) SubscribeRpcReq(ctx context.Context, handler MessageHandler) error {
